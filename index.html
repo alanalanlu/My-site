@@ -1,0 +1,386 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+
+  <!-- <link rel="stylesheet" href="../node_modules/@splidejs/splide/dist/css/splide.min.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://kit.fontawesome.com/5d88d2a149.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('.splide').mount();
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #container {
+      /* overflow: hidden; */
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    #background_video {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    #video_cover {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      background: url('video_cover.jpeg') no-repeat;
+      /* background-size: cover;
+      background-position: center;
+      background-attachment: fixed; */
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #video_controls {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    #play img {
+      width: 100px;
+    }
+
+    #pause img {
+      width: 90px;
+    }
+
+    #pause {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      #video_controls {
+        display: none;
+      }
+    }
+
+    /* Demo page specific styles */
+
+    body {
+      text-align: center;
+      font-family: 'proxima-nova', Helvetica;
+    }
+
+    #experience {
+      padding-top: 200px;
+      /* padding-bottom: 200px; */
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    #container {
+      height: 100%;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    #main_content {
+      z-index: -1;
+      padding-top: 10%;
+      /* position: sticky; */
+      /* display: inline-block; */
+      overflow-y: scroll;
+
+      height: 100%;
+      top: 50%;
+      transform: translateY(0%);
+    }
+
+    #main_content h1 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'proxima-nova-condensed', Helvetica;
+      color: #fff;
+      font-size: 35px;
+    }
+
+    h1 {
+      padding-top: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'proxima-nova-condensed', Helvetica;
+      color: #fff;
+      font-size: 35px;
+    }
+
+    #main_content head {
+      padding-top: 100px;
+    }
+
+    #main_content .sub_head {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 18px;
+    }
+
+    #experience .sub_head {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 18px;
+      text-align: left;
+      margin: 20px;
+    }
+
+    #main_content .info {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    #links {
+      margin-top: 50px;
+    }
+
+    #links a {
+      border: 2px solid rgba(255, 255, 255, 0.20);
+      border-radius: 61px;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    #header {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    #header #contact {
+      /* padding: 20px; */
+      float: left;
+      margin: 15px;
+    }
+
+    #header #resume {
+      margin-top: 50px;
+      padding-right: 50px;
+    }
+
+    #header a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    #header a:first-child {
+      float: left;
+    }
+
+    #header a:last-child {
+      float: right;
+    }
+
+    .swiper-slide {
+      margin: 0 auto;
+    }
+
+    .bold {
+      color: rgb(219, 219, 219);
+    }
+
+    #art {
+      padding-bottom: 400px;
+      padding-top: 200px;
+    }
+  </style>
+
+  <script src="https://use.typekit.net/nlq1kdt.js"></script>
+  <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+    <section id="main_content">
+      <div id="head">
+        <div>
+          <img src="head.jpg" height=200px>
+        </div>
+        <div>
+          <h1>Hey, I'm Alan</h1>
+          <p class="sub_head">I'm a CS/Finance student that loves coding, trading stocks, and art!</p>
+        </div>
+
+        <!-- <p class="info">(Hold on! The video might take sdflskdjfsa while to load.)</p> -->
+      </div>
+      <div id="experience">
+        <h1>Experience</h1>
+        <p class="sub_head">
+          <b class="bold">Tauria</b>, Junior Developer, Frontend Engineer
+        </p>
+        <p class="sub_head">
+          <b class="bold">Future Innovative Technology Lab</b>, Software Engineer Intern, FullStack engineer
+        </p>
+        <p class="sub_head">
+          <b class="bold">SmartMoney</b>, Software Engineer Intern, FullStack engineer
+        </p>
+        <p class="sub_head">
+          <b class="bold">BoardUp</b>, Co-Founder of company that sells foldable skateboards
+        </p>
+        <!-- <p class="info">(Hold on! The video might take sdflskdjfsa while to load.)</p> -->
+      </div>
+      <div id="experience">
+        <h1>Stock Trading</h1>
+        <p class="sub_head">
+          I invested 80k of my own tuition in stocks and generated a yield of 250%. I was able to clear my ridiculous
+          student loans.
+        </p>
+        <p class="sub_head">
+          Saw potential in Tesla and bought before profitability and had a 3.5x gain.
+        </p>
+        <p class="sub_head">
+          Purchased Beyond Meat pre IPO and had a 9.5x gain and bought puts while hysteria faded.
+        </p>
+        <p class="sub_head">
+          Saw the potential of Covid and tail risk hedged the crash late Jan. Puts resulted in ~30x gain.
+        </p>
+        <p class="sub_head">
+          Bought Gold/Silver during Covid crash with expectation of inflation fears induced by Fed stimulus.
+        </p>
+      </div>
+      <div id="art">
+        <h1>My Art</h1>
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="art1.jpeg" height=500px></div>
+            <div class="swiper-slide"><img src="art2.jpeg" height=500px></div>
+            <div class="swiper-slide"><img src="art3.jpeg" height=500px></div>
+            <div class="swiper-slide"><img src="art4.jpeg" height=500px></div>
+            <div class="swiper-slide"><img src="art5.jpeg" height=500px></div>
+
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+
+
+
+
+      <div id="header">
+        <div id="contact">
+          <span style="font-size: 1.5em; color: white;">
+            <a href="https://www.facebook.com/people/Alan-Lu/100007035700333">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </span>
+          <span style="font-size: 1.5em; color: white;">
+            <a href="https://github.com/alanalanlu">
+              <i class="fab fa-github"></i>
+            </a>
+          </span> <span style="font-size: 1.5em; color: white;">
+            <a href="mailto:al5930@nyu.edu">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </span>
+          <span style="font-size: 1.5em; color: white;">
+            <a href="https://www.linkedin.com/in/alan-lu-57094517b/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </span>
+        </div>
+
+        <a href="Resume.pdf" id="resume" target="_blank">
+          Resume
+        </a>
+      </div>
+
+      <div id="footer">
+
+      </div>
+
+
+    </section>
+
+  </div>
+
+
+  <script src="bideo.js"></script>
+  <script src="main.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },   // And if we need scrollbar
+
+    })
+  </script>
+
+</body>
+
+</html>
